@@ -15,6 +15,12 @@ TABLE_SCHEMA = {"fields": [
     {"name": "remote_ip", "type": "STRING", "mode": "NULLABLE"},
     {"name": "user_agent", "type": "STRING", "mode": "NULLABLE"},
     {"name": "date", "type": "DATE", "mode": "NULLABLE"},
+    {"name": "ip_info", "type": "RECORD", "mode": "NULLABLE",
+        "fields": [
+            {"name": "continent", "type": "STRING", "mode": "NULLABLE"},
+            {"name": "country", "type": "STRING", "mode": "NULLABLE"},
+            {"name": "city", "type": "STRING", "mode": "NULLABLE"},
+        ]},
     {"name": "device", "type": "RECORD", "mode": "NULLABLE",
         "fields": [
             {"name": "device", "type": "STRING", "mode": "NULLABLE"},

@@ -1,3 +1,6 @@
 PyYAML==5.3.1
 ua-parser==0.10.0
 user-agents==2.1
+python-geoip==1.2
+maxminddb==2.2.0
+maxminddb-geolite2==2018.703

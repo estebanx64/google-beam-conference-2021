@@ -1,0 +1,15 @@
+[tool.black]
+line-length = 100
+target-version = ['py39']
+ignore=".git"
+
+[tool.isort]
+profile = "black"
+src_paths = ["src", "tests"]
+atomic = true
+skip = [".gitignore"]
+skip_glob = ["venv/*"]
+import_heading_stdlib = "Standard Library"
+import_heading_firstparty = "Internal Common Packages"
+import_heading_thirdparty = "Third Party Packages"
+import_heading_localfolder = "Internal/Relatives Project Modules"

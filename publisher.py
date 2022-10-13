@@ -1,11 +1,11 @@
-from faker import Faker
+# Standard Library
 import base64
 import json
 
+# Third Party Packages
 from config.project_config import TOPIC
-
+from faker import Faker
 from google.cloud import pubsub_v1
-
 
 fake = Faker()
 publisher = pubsub_v1.PublisherClient()
@@ -16,10 +16,12 @@ def sent_pubsub_payloads(iterations: int):
         data = {
             "name": fake.name(),
             "company": fake.company(),
+            "phone_number": f"+{fake.msisdn()}",
+            "job": fake.job(),
             "msg": fake.sentence(),
             "remote_ip": fake.ipv4_public(),
             "user_agent": fake.user_agent(),
-            "date": str(fake.date_between("today", "+8h"))
+            "date": str(fake.date_between("today", "+8h")),
         }
 
         payload_string = json.dumps(data)
